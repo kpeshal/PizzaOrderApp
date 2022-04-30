@@ -33,7 +33,6 @@ export default function App() {
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
       <Text>Pizza App ToDo 👋</Text>
-      <Entypo name="rocket" size={30} />
     </View>
   );
 }
