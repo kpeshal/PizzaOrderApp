@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import * as SplashScreen from "expo-splash-screen";
+import Home from "./app/components/home";
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
@@ -32,7 +33,7 @@ export default function App() {
 
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
-      <Text>Pizza App ToDo 👋</Text>
+     <Home/>
     </View>
   );
 }
