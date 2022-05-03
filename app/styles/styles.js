@@ -1,4 +1,5 @@
 import { StyleSheet, StatusBar } from "react-native";
+import { color } from "react-native/Libraries/Components/View/ReactNativeStyleAttributes";
 import colors from "../config/colors";
 
 export default styles = StyleSheet.create({
@@ -88,9 +89,65 @@ export default styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    //  borderColor: colors.primary,
     borderWidth: 1,
     marginHorizontal: 5,
     marginBottom: 2,
+  },
+
+  //style Modal
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 22,
+  },
+  modalView: {
+    // margin: 20,
+    height: 500,
+    width: 300,
+    backgroundColor: colors.creamwhite,
+    borderRadius: 15,
+    padding: 5,
+    // alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    flexDirection: "column",
+    justifyContent: "flex-end",
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 20,
+    justifyContent: "space-between",
+  },
+  modalHeaderContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  modalFooterContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  button: {
+    borderRadius: 10,
+    padding: 10,
+    //  elevation: 2,
+    width: 100,
+  },
+  buttonOk: {
+    backgroundColor: colors.secondary,
+  },
+  buttonClose: {
+    backgroundColor: colors.danger,
+  },
+  textStyle: {
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+  modalText: {
+    marginBottom: 15,
+    textAlign: "center",
   },
 });
