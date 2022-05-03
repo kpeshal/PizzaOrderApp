@@ -1,5 +1,6 @@
 export default {
-  primary: "#f2994a",
-  secondary: "#343332",
-  //#828584
+  primary: "#2e2e2e",
+  secondary: "#f2994a",
+  itemblock: "#3d3d3d",
+  creamwhite: "#e7e7e7",
 };
