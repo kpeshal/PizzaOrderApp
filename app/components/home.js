@@ -1,12 +1,10 @@
 import React, { useState, useCallback } from "react";
 import { SafeAreaView, TouchableOpacity, View, Text } from "react-native";
-import styles from "../styles/styles"
-
+import styles from "../styles/styles";
 
 const Home = () => {
   //const [selected, setSelected] = useState();
   const [isMenu, setIsMenu] = useState(true);
-
 
   return (
     <SafeAreaView style={styles.container}>
@@ -14,7 +12,7 @@ const Home = () => {
         <TouchableOpacity
           style={[styles.tabStyle, isMenu ? styles.activeTabStyle : {}]}
           accessible={true}
-          onPress={() => onTabPress("Menu")}
+          // onPress={() => onTabPress("Menu")}
           activeOpacity={1}
         >
           <Text numberOfLines={1} allowFontScaling={true} ellipsizeMode="tail">
@@ -24,7 +22,7 @@ const Home = () => {
         <TouchableOpacity
           style={[styles.tabStyle, !isMenu ? styles.activeTabStyle : {}]}
           accessible={true}
-          onPress={() => onTabPress("My Orders")}
+          // onPress={() => onTabPress("My Orders")}
           activeOpacity={1}
         >
           <Text numberOfLines={1} allowFontScaling={true} ellipsizeMode="tail">
@@ -36,12 +34,9 @@ const Home = () => {
             </Text>
           </View>
         </TouchableOpacity>
-      </View>      
+      </View>
     </SafeAreaView>
   );
 };
 
 export default Home;
-
-
-
