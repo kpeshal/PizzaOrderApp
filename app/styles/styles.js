@@ -103,7 +103,8 @@ export default styles = StyleSheet.create({
   },
   modalView: {
     // margin: 20,
-    height: 500,
+    // height: 500,
+    display: "flex",
     width: 300,
     backgroundColor: colors.creamwhite,
     borderRadius: 15,
@@ -115,7 +116,6 @@ export default styles = StyleSheet.create({
       height: 2,
     },
     flexDirection: "column",
-    justifyContent: "flex-end",
     shadowOpacity: 0.25,
     shadowRadius: 4,
     elevation: 20,
@@ -124,10 +124,44 @@ export default styles = StyleSheet.create({
   modalHeaderContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
+    // height: "10%",
+    alignItems: "center",
+    paddingStart: 5,
+  },
+  modalBody: {
+    borderColor: "#0076FF",
+    borderWidth: 1,
+    // height:"",
+    display: "flex",
+    // justifyContent: "center",
+    alignItems: "center",
+    marginTop: 2,
+    marginBottom: 2,
   },
   modalFooterContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
+    // height: "10%",
+  },
+  toppingsContainer: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    padding: 5,
+
+    borderColor: "#0076FF",
+    borderWidth: 1,
+
+    //   justifyContent:""
+  },
+  toppingsButton: {
+    borderRadius: 10,
+    padding: 5,
+    marginRight: 5,
+    marginTop: 5,
+    backgroundColor: colors.danger,
+  },
+  selectedToppingsButton: {
+    backgroundColor: "#0076FF",
   },
   button: {
     borderRadius: 10,

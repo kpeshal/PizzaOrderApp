@@ -9,9 +9,16 @@ import OrderList from "./orderlist";
 const Home = () => {
   //const [selected, setSelected] = useState();
   const [isMenu, setIsMenu] = useState(true);
+  const [order, setOrder] = useState([]);
 
   const onTabPress = () => {
     setIsMenu(!isMenu);
+  };
+
+  const addToOrder = (newOrder) => {
+    let data = [...order];
+    data.push(newOrder);
+    setOrder(data);
   };
 
   return (
@@ -36,15 +43,20 @@ const Home = () => {
           <Text numberOfLines={1} allowFontScaling={true} ellipsizeMode="tail">
             My Orders
           </Text>
+
           <View style={[styles.tabBadgeContainerStyle]}>
             <Text style={[styles.tabBadgeStyle]} allowFontScaling={true}>
-              4
+              {order.length ? order.length : 0}
             </Text>
           </View>
         </TouchableOpacity>
       </View>
 
-      {isMenu ? <MenuList /> : <OrderList />}
+      {isMenu ? (
+        <MenuList addToOrder={addToOrder} />
+      ) : (
+        <OrderList order={order} />
+      )}
     </SafeAreaView>
   );
 };

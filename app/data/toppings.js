@@ -10,6 +10,7 @@ export default [
   {
     id: 3,
     title: "Extra Cheese",
+    isSelected: true,
   },
   {
     id: 4,

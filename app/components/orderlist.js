@@ -5,7 +5,7 @@ const onSelect = () => {
   alert("ToDo Checkout");
 };
 
-const OrderList = () => {
+const OrderList = (order) => {
   return (
     <View style={styles.myOrdersContainerStyle}>
       <View style={{ justifyContent: "center", flex: 1, alignItems: "center" }}>
