@@ -18,13 +18,21 @@ const renderItem = ({ item }) => {
 const OrderList = (props) => {
   const { order } = props;
 
-  
+  const [modalVisible, setModalVisible] = useState(false);
 
-  
+  const onSelect = () => {
+    setModalVisible(true);
+  };
+
+  const onModalClose = () => {
+    setModalVisible(false);
+  };
 
   return (
     <View style={styles.myOrdersContainerStyle}>
-      
+      {modalVisible && (
+        <CheckOut modalVisible={modalVisible} onModalClose={onModalClose} />
+      )}
 
       {order.length ? (
         <FlatList
@@ -44,7 +52,7 @@ const OrderList = (props) => {
       <TouchableOpacity
         style={[styles.checkoutButton]}
         accessible={true}
-      //  onPress={onSelect}
+        onPress={onSelect}
         activeOpacity={1}
       >
         <Entypo
