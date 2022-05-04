@@ -5,7 +5,30 @@ import menu from "../data/menu";
 import styles from "../styles/styles";
 
 const MenuList = (props) => {   
- 
+    const [modalVisible, setModalVisible] = useState(false);
+    const [selectedPizza, setSelectedPizza] = useState(null);
+
+    const onSelect = (title) => {
+        setModalVisible(true);
+        setSelectedPizza(title);
+        data.map((x) => {
+          x.isSelected = false;
+          return x;
+        });
+      };
+    
+      const onModalClose = () => {
+        setSelectedPizza(null);
+        setModalVisible(false);
+      };
+    
+      const addToOrder = (order) => {
+        props.addToOrder(order);
+        setModalVisible(false);
+        Alert.alert("Success!!", "Check My Orders to View your Order.", [
+          { text: "OK" },
+        ]);
+      };
 
   const renderItem = ({ item }) => {
     return (
@@ -23,6 +46,15 @@ const MenuList = (props) => {
       <View style={{ alignItems: "center" }}>
         <Text style={styles.todaysSpecial}>Today's Special</Text>
       </View>
+
+      {modalVisible && (
+        <AddPizzaModal
+          modalVisible={modalVisible}
+          selectedPizza={selectedPizza}
+          onModalClose={onModalClose}
+          addToOrder={addToOrder}
+        />
+      )}
       
 
       <FlatList
