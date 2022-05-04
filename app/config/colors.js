@@ -6,4 +6,5 @@ export default {
   danger: "#FF0000",
   //#828584
   grey: "#D5DBDB",
+  react: "#61DBFB",
 };

@@ -15,10 +15,14 @@ export default styles = StyleSheet.create({
   },
   item: {
     borderRadius: 20,
-    padding: 20,
+    padding: 10,
     marginVertical: 8,
     marginHorizontal: 16,
     backgroundColor: colors.itemblock,
+  },
+  menuItemView: {
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
   orderItem: {
     borderRadius: 20,
@@ -28,13 +32,18 @@ export default styles = StyleSheet.create({
     backgroundColor: colors.itemblock,
   },
   title: {
-    fontSize: 28,
+    fontSize: 25,
     color: colors.creamwhite,
   },
 
   todaysSpecial: {
-    fontSize: 32,
+    fontSize: 30,
     color: colors.creamwhite,
+  },
+
+  totalPrice: {
+    fontSize: 30,
+    color: colors.secondary,
   },
 
   //style tab
@@ -179,7 +188,7 @@ export default styles = StyleSheet.create({
     backgroundColor: colors.creamwhite,
   },
   selectedToppingsButton: {
-    backgroundColor: colors.danger,
+    backgroundColor: colors.react,
   },
   button: {
     borderRadius: 10,
@@ -257,5 +266,50 @@ export default styles = StyleSheet.create({
   },
   checkboxLabel: {
     margin: 8,
+  },
+
+  logoStyle: {
+    width: 70,
+    height: 70,
+    marginRight: 10,
+    borderRadius: 8,
+  },
+  menuPriceContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+    marginRight: 15,
+  },
+  menuPriceText: {
+    color: colors.secondary,
+    // fontWeight: "bold",
+    textAlign: "center",
+    fontSize: 25,
+  },
+  ingTextView: {
+    color: colors.react,
+    // fontWeight: "bold",
+    textAlign: "left",
+    fontStyle: "italic",
+  },
+
+  myordercard: {
+    borderRadius: 20,
+    padding: 10,
+    // height: 200,
+    marginVertical: 8,
+    marginHorizontal: 16,
+    backgroundColor: colors.itemblock,
+  },
+  myOrderExtra: {
+    color: colors.react,
+    // fontWeight: "bold",
+    textAlign: "left",
+    fontStyle: "italic",
+  },
+  myOrderTotal: {
+    color: colors.secondary,
+    // fontWeight: "bold",
+    textAlign: "left",
+    fontStyle: "italic",
   },
 });
