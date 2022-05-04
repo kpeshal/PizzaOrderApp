@@ -2,7 +2,6 @@ import React, { useState, useCallback } from "react";
 import { SafeAreaView, TouchableOpacity, View, Text } from "react-native";
 import styles from "../styles/styles";
 import MenuList from "./menulist";
-import OrderList from "./orderlist";
 
 const Home = () => {
   //const [selected, setSelected] = useState();
@@ -12,8 +11,6 @@ const Home = () => {
   const onTabPress = () => {
     setIsMenu(!isMenu);
   };
-
-  
 
   return (
     <SafeAreaView style={styles.container}>
@@ -56,11 +53,8 @@ const Home = () => {
         </TouchableOpacity>
       </View>
 
-      {isMenu ? (
-        <MenuList/>
-      ) :  null
-      }
+      {isMenu ? <MenuList /> : null}
     </SafeAreaView>
   );
 };
- export default Home;
+export default Home;
