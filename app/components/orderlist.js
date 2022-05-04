@@ -44,7 +44,7 @@ const OrderList = (props) => {
       <TouchableOpacity
         style={[styles.checkoutButton]}
         accessible={true}
-        onPress={onSelect}
+      //  onPress={onSelect}
         activeOpacity={1}
       >
         <Entypo
