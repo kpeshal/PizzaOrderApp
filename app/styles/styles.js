@@ -1,5 +1,5 @@
 import { StyleSheet, StatusBar } from "react-native";
-import { color } from "react-native/Libraries/Components/View/ReactNativeStyleAttributes";
+
 import colors from "../config/colors";
 
 export default styles = StyleSheet.create({
@@ -14,6 +14,13 @@ export default styles = StyleSheet.create({
     marginBottom: 2,
   },
   item: {
+    borderRadius: 20,
+    padding: 20,
+    marginVertical: 8,
+    marginHorizontal: 16,
+    backgroundColor: colors.itemblock,
+  },
+  orderItem: {
     borderRadius: 20,
     padding: 20,
     marginVertical: 8,
@@ -92,6 +99,9 @@ export default styles = StyleSheet.create({
     borderWidth: 1,
     marginHorizontal: 5,
     marginBottom: 2,
+    position: "absolute",
+    bottom: 0,
+    width: "100%",
   },
 
   //style Modal
@@ -183,5 +193,12 @@ export default styles = StyleSheet.create({
   modalText: {
     marginBottom: 15,
     textAlign: "center",
+  },
+
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
   },
 });

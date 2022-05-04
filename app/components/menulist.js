@@ -34,6 +34,7 @@ const MenuList = (props) => {
 
   const addToOrder = (order) => {
     props.addToOrder(order);
+    setModalVisible(false);
   };
 
   const renderItem = ({ item }) => {
