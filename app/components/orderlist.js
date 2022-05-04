@@ -2,16 +2,17 @@ import React, { useState } from "react";
 import { View, Text, TouchableOpacity, FlatList } from "react-native";
 import styles from "../styles/styles";
 import { Entypo } from "@expo/vector-icons";
+import CheckOut from "../components/checkout";
 
 const renderItem = ({ item }) => {
   return (
-    <TouchableOpacity
-      //onPress={() => onSelect(item.title)}
-      style={styles.item}
-    >
+    <View style={styles.myordercard}>
       <Text style={styles.title}>{item.pizza}</Text>
-      <Text>{item.toppings.toString()}</Text>
-    </TouchableOpacity>
+      {item.toppings.length ? (
+        <Text style={styles.myOrderExtra}> Add {item.toppings.toString()}</Text>
+      ) : null}
+      <Text style={styles.myOrderTotal}>Total - {10}</Text>
+    </View>
   );
 };
 
@@ -30,6 +31,11 @@ const OrderList = (props) => {
 
   return (
     <View style={styles.myOrdersContainerStyle}>
+      {order.length && (
+        <View style={{ alignItems: "center" }}>
+          <Text style={styles.totalPrice}>$30</Text>
+        </View>
+      )}
       {modalVisible && (
         <CheckOut modalVisible={modalVisible} onModalClose={onModalClose} />
       )}

@@ -1,51 +1,55 @@
 export default [
   {
     id: 1,
-    title: "Pepperoni",
+    title: "pepperoni",
   },
   {
     id: 2,
-    title: "Mushroom",
+    title: "mushroom",
   },
   {
     id: 3,
-    title: "Extra Cheese",
+    title: "extra cheese",
     isSelected: true,
   },
   {
     id: 4,
-    title: "Saussage",
+    title: "saussage",
   },
   {
     id: 5,
-    title: "Onion",
+    title: "onion",
   },
   {
     id: 6,
-    title: "Black Olives",
+    title: "black olives",
   },
   {
     id: 7,
-    title: "Green Pepper",
+    title: "green pepper",
   },
   {
     id: 8,
-    title: "Fresh Garlic",
+    title: "fresh garlic",
   },
   {
     id: 9,
-    title: "Tomato",
+    title: "tomato",
   },
   {
     id: 10,
-    title: "Basil",
+    title: "basil",
   },
   {
     id: 11,
-    title: "Pineapple",
+    title: "pineapple",
   },
   {
     id: 12,
-    title: "Chicken",
+    title: "chicken",
+  },
+  {
+    id: 12,
+    title: "bacon",
   },
 ];
