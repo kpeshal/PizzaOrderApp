@@ -2,6 +2,7 @@ import React, { useState, useCallback } from "react";
 import { SafeAreaView, TouchableOpacity, View, Text } from "react-native";
 import styles from "../styles/styles";
 import MenuList from "./menulist";
+import OrderList from "./orderlist";
 
 const Home = () => {
   //const [selected, setSelected] = useState();
@@ -53,7 +54,7 @@ const Home = () => {
         </TouchableOpacity>
       </View>
 
-      {isMenu ? <MenuList /> : null}
+      {isMenu ? <MenuList /> : <OrderList order={order}/>}
     </SafeAreaView>
   );
 };
