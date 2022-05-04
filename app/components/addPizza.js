@@ -67,7 +67,12 @@ const AddPizzaModal = (props) => {
             </View>
 
             <View style={styles.modalFooterContainer}>
-              
+              {/* <Pressable
+                style={[styles.button, styles.buttonClose]}
+                onPress={onModalClose}
+              >
+                <Text style={styles.textStyle}>Cancel</Text>
+              </Pressable> */}
               <Pressable
                 style={[styles.button, styles.buttonOk, styles.fullWidth]}
                 onPress={() => onPressAdd()}
