@@ -13,11 +13,15 @@ const Home = () => {
     setIsMenu(!isMenu);
   };
 
-  const addToOrder=(newOrder)=>{
+  const addToOrder = (newOrder) => {
     let data = [...order];
     data.push(newOrder);
     setOrder(data);
-  }
+  };
+
+  const clearOrders = () => {
+    setOrder([]);
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -60,7 +64,11 @@ const Home = () => {
         </TouchableOpacity>
       </View>
 
-      {isMenu ? <MenuList addToOrder={addToOrder} /> : <OrderList order={order}/>}
+      {isMenu ? (
+        <MenuList addToOrder={addToOrder} />
+      ) : (
+        <OrderList order={order} resetOrders={clearOrders} />
+      )}
     </SafeAreaView>
   );
 };

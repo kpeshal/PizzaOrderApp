@@ -10,7 +10,10 @@ const AddPizzaModal = (props) => {
 
   const onPressAdd = () => {
     let order = {};
-    order.pizza = selectedPizza;
+    order.pizza = selectedPizza.title;
+    order.price = toppings.filter((x) => x.isSelected).length
+      ? selectedPizza.price + 1
+      : selectedPizza.price;
     order.toppings = toppings.filter((x) => x.isSelected).map((y) => y.title);
     props.addToOrder(order);
   };
@@ -32,7 +35,7 @@ const AddPizzaModal = (props) => {
           <View style={styles.modalView}>
             <View style={styles.modalHeaderContainer}>
               <Text style={[styles.secondaryText, styles.textModalHeading]}>
-                {selectedPizza}
+                {selectedPizza.title}
               </Text>
               <Pressable onPress={onModalClose}>
                 <Entypo name="cross" size={30} color="red" />
