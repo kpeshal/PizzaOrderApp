@@ -15,11 +15,11 @@ import data from "../data/toppings";
 
 const MenuList = (props) => {
   const [modalVisible, setModalVisible] = useState(false);
-  const [selectedPizza, setSelectedPizza] = useState(null);
+  const [selectedPizza, setSelectedPizza] = useState(undefined);
 
-  const onSelect = (title) => {
+  const onSelect = (item) => {
     setModalVisible(true);
-    setSelectedPizza(title);
+    setSelectedPizza(item);
     data.map((x) => {
       x.isSelected = false;
       return x;
@@ -27,7 +27,7 @@ const MenuList = (props) => {
   };
 
   const onModalClose = () => {
-    setSelectedPizza(null);
+    setSelectedPizza(undefined);
     setModalVisible(false);
   };
 
@@ -41,10 +41,7 @@ const MenuList = (props) => {
 
   const renderItem = ({ item }) => {
     return (
-      <TouchableOpacity
-        onPress={() => onSelect(item.title)}
-        style={styles.item}
-      >
+      <TouchableOpacity onPress={() => onSelect(item)} style={styles.item}>
         <View style={styles.menuItemView}>
           <View style={{ flexDirection: "row" }}>
             <Image

@@ -6,7 +6,7 @@ import { Entypo } from "@expo/vector-icons";
 import styles from "../styles/styles";
 
 const CheckOut = (props) => {
-  const { modalVisible, onModalClose } = props;
+  const { modalVisible, onModalClose, clearOrders } = props;
   const [details, setDetails] = useState({
     firstName: "",
     lastName: "",
@@ -17,23 +17,32 @@ const CheckOut = (props) => {
   const [isChecked, setChecked] = useState(false);
 
   const onChangeHandler = (value, name) => {
-    // const { name, type, value } = event.nativeEvent;
-    // console.log(JSON.stringify(event));
     let newDetails = { ...details };
     newDetails[name] = value;
     setDetails(newDetails);
   };
 
-  const setSelection = () => {
-    // console.log(a);
-    let newDetails = { ...details };
-    newDetails.deliveryAddress = !details.payOnDelivery;
-    setDetails(newDetails);
-  };
-
   const onPressAdd = () => {
-    onModalClose();
-    Alert.alert("Success!!", "Your Order has been Placed.", [{ text: "OK" }]);
+    if (
+      !details.firstName ||
+      !details.lastName ||
+      !details.phoneNumber ||
+      !details.deliveryAddress ||
+      !isChecked
+    ) {
+      alert("Please fill out all the fields");
+    } else {
+      onModalClose();
+      Alert.alert(
+        "Success!!",
+        `Thank You ${
+          details.firstName + " " + details.lastName
+        } your order has been confirmed and
+      will be delivered at ${details.deliveryAddress}`,
+        [{ text: "OK" }]
+      );
+      clearOrders();
+    }
   };
 
   return (
@@ -72,7 +81,7 @@ const CheckOut = (props) => {
                       type="text"
                       placeholder="First Name"
                       value={details.firstName}
-                      onChangeText={(e) => onChangeHandler(e, "firstname")}
+                      onChangeText={(e) => onChangeHandler(e, "firstName")}
                     />
                     <Text style={styles.whitetextNormal}>Last Name</Text>
                     <TextInput
@@ -111,6 +120,12 @@ const CheckOut = (props) => {
               <Pressable
                 style={[styles.button, styles.buttonOk, styles.fullWidth]}
                 onPress={() => onPressAdd()}
+                // disabled={
+                //   !details.firstName ||
+                //   !details.lastName ||
+                //   !details.phoneNumber ||
+                //   !details.deliveryAddress
+                // }
               >
                 <Entypo
                   name="check"

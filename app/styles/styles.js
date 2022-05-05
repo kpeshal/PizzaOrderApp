@@ -299,6 +299,9 @@ export default styles = StyleSheet.create({
     marginVertical: 8,
     marginHorizontal: 16,
     backgroundColor: colors.itemblock,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   myOrderExtra: {
     color: colors.react,
