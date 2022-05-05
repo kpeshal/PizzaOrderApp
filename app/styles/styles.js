@@ -154,11 +154,7 @@ export default styles = StyleSheet.create({
     paddingStart: 5,
   },
   modalBody: {
-    // borderColor: "#0076FF",
-    // borderWidth: 1,
-    // height:"",
     display: "flex",
-    // justifyContent: "center",
     alignItems: "center",
     marginTop: 10,
     marginBottom: 10,

@@ -23,6 +23,18 @@ const Home = () => {
     setOrder([]);
   };
 
+  const removeOrder = (item) => {
+    let newOrder = [...order];
+    let index = newOrder.findIndex(
+      (i) =>
+        i.pizza === item.pizza &&
+        i.price === item.price &&
+        i.toppings === item.toppings
+    );
+    newOrder.splice(index, 1);
+    setOrder(newOrder);
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.tabsContainerStyle}>
@@ -67,7 +79,11 @@ const Home = () => {
       {isMenu ? (
         <MenuList addToOrder={addToOrder} />
       ) : (
-        <OrderList order={order} resetOrders={clearOrders} />
+        <OrderList
+          order={order}
+          resetOrders={clearOrders}
+          deleteOrder={removeOrder}
+        />
       )}
     </SafeAreaView>
   );

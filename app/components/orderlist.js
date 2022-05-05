@@ -10,9 +10,10 @@ import {
 import styles from "../styles/styles";
 import { Entypo } from "@expo/vector-icons";
 import CheckOut from "../components/checkout";
+import toppings from "../data/toppings";
 
 const OrderList = (props) => {
-  const { order, resetOrders } = props;
+  const { order, resetOrders, deleteOrder } = props;
 
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -32,14 +33,14 @@ const OrderList = (props) => {
     resetOrders();
   };
 
-  const removeOrder = () => {
+  const removeOrder = (item) => {
     Alert.alert("Remove Order", "Are You Sure You Want To Remove This Order?", [
       {
         text: "Cancel",
         onPress: () => console.log("Cancel Pressed"),
         style: "cancel",
       },
-      { text: "OK", onPress: () => deleteOrder() },
+      { text: "OK", onPress: () => deleteOrder(item) },
     ]);
   };
 

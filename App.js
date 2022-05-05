@@ -10,7 +10,7 @@ export default function App() {
     async function prepare() {
       try {
         await SplashScreen.preventAutoHideAsync();
-        await new Promise((resolve) => setTimeout(resolve, 2000));
+        await new Promise((resolve) => setTimeout(resolve, 300));
       } catch (e) {
         console.warn(e);
       } finally {
@@ -33,7 +33,7 @@ export default function App() {
 
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
-     <Home/>
+      <Home />
     </View>
   );
 }
